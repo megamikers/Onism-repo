@@ -27,7 +27,7 @@ public class Movement2 : MonoBehaviour{
 	Animator mAnim;
 
 	bool Grounded(){
-		//Debug.DrawLine(transform.position,transform.position + (Vector3.down * distToGround),Color.red);
+		Debug.DrawLine(transform.position,transform.position + (Vector3.down * distToGround),Color.red);
 		//return Physics.Raycast(transform.position,Vector3.down, distToGround, ground);
 		#if UNITY_EDITOR
 		Debug.DrawLine(transform.position+(Vector3.up * distToGround), transform.position + (Vector3.down * distToGround),Color.red);

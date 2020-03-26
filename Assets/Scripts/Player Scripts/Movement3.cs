@@ -88,16 +88,19 @@ public class Movement3 : MonoBehaviour{
 
 	bool isJumpLaunch = false;
 	public void onAnimJumpLaunch(){ isJumpLaunch = true;
-		Debug.Log("onAnimJumpLaunch");
+	Debug.Log("onAnimJumpLaunch");
 	}
 
 	bool isJumpGrounded = false;
-	public void onAnimJumpGrounded(){ isJumpGrounded = true;
-		Debug.Log("onAnimJumpGrounded");
+	public void onAnimJumpGrounded()
+    {
+        isJumpGrounded = true;
+        Debug.Log("onAnimJumpGrounded");
 	}
 
 	bool isJumpComplete = false;
-	public void onAnimJumpComplete(){
+	public void onAnimJumpComplete()
+    {
 		isJumpComplete = true;
 		Debug.Log("onAnimJumpComplete");
 	}
@@ -134,18 +137,18 @@ public class Movement3 : MonoBehaviour{
 
 		if(mJumpState != 0){
 			mJumpDelay -= Time.deltaTime;
-			//Debug.Log("vy " + vMove.y.ToString());
-			//Debug.Log(mJumpDelay);
+			Debug.Log("vy " + vMove.y.ToString());
+			Debug.Log(mJumpDelay);
 			if(mJumpDelay <= 0 && mJumpState == 1){
 				//vMove.y += mJumpSpeed * 1.1f;
 				mJumpState = 2;
 				Debug.Log("JumpState 2");
-			}
+			} 
 
 			//if(mJumpState == 1 && mAnim.GetCurrentAnimatorStateInfo(0).IsName("FallingIdle")){
 			//	vMove.y += mJumpSpeed;
 			//	mJumpState = 2;
-			//	Debug.Log("JumpState 2");
+			//Debug.Log("JumpState 2");
 			//}
 
 

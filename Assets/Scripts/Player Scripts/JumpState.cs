@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace SPLabs.Controllers{
-
+namespace SPLabs.Controllers
+{
+     
 	public class JumpState : BaseState{
 		private float mJumpSpeed = 5f,
 					mDownRayDist = 0.5f,			//Range to scan downward, has to be at least 0.2
@@ -49,7 +50,7 @@ namespace SPLabs.Controllers{
 			checkGrounded(ucs);
 
 			if(mJumpState == 2 && mIsGrounded && !ucs.Anim.IsInTransition(0)){
-				Debug.Log("GROUNDED---------------------------------------------------");
+				//Debug.Log("GROUNDED---------------------------------------------------");
 				mJumpState = 3;
 				ucs.Anim.SetBool("Jump",false);
 			}else if(mJumpState == 5){
