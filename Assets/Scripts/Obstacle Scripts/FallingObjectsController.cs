@@ -3,19 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FallingObjectsController : MonoBehaviour
-{
+{ 
     // Public Variables
     public Transform[] triggerPositon;          // The position of the falling objects trigger
     public GameObject[] obstacleObjects;   // The Obstacle Objects position
-
+     
     // When the player enters any trigger
     // execute the following
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
+        { 
             DelayedAction();    // Wait 1 second before dropping the object
-            Instantiate(obstacleObjects[0], new Vector3(0.85f, 6, 9.42f), Quaternion.identity);
+
+            // Instantiate the falling object 
+            Instantiate(obstacleObjects[0], triggerPositon[0].transform.position + new Vector3(0, 5, 3), Quaternion.identity);
+             
             Debug.Log("Uh Oh");
         }
  
