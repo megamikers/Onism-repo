@@ -14,7 +14,7 @@ public class Collectables : MonoBehaviour
         {
             Debug.Log("Collected");
             Destroy(this.gameObject);
-            //SceneManager.LoadScene("Asteria Boss Scene");
+            SceneManager.LoadScene("Credit");
         }
     }
      
